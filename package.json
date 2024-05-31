@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "date-fns": "^2.16.1",
+    "http-server": "^14.1.1",
     "playwright": "^1.7.1",
     "shortid": "^2.2.16",
     "terminal-kit": "^1.44.3"
