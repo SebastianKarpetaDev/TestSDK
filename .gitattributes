@@ -1,0 +1,2 @@
+*.pl text eol=lf
+.gitattributes text eof=lf
