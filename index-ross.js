@@ -24,8 +24,13 @@ var showPass = false;
 var argIndex = 0;
 var browsers = ['chromium', 'firefox', 'webkit'];
 var toolkits = ['classic', 'modern'];
+var lastOutput = `\n`;
 
-let separator = ',';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0f7219dd67b7ef63587e7c6ceb47f4a157e89f65
+const separator = ',';
 
 function validateValues(types, providedValues) {
     let validTypes = [];
@@ -43,8 +48,17 @@ function validateValues(types, providedValues) {
     return validTypes;
 }
 
+let $last = `\n`;
+
 args.forEach(function(arg) {
   switch(arg) {
+    case '-last-space':
+<<<<<<< HEAD
+      $last = ` `;
+=======
+      lastOutput = ` `;
+>>>>>>> 0f7219dd67b7ef63587e7c6ceb47f4a157e89f65
+    break;
     case '-sdk-url':
       sdkHost = args[argIndex + 1];
     break;
@@ -179,7 +193,7 @@ const getRunner = (browser, toolkit) => {
 const PORT = 1841
 const server = createServer({ root: '../' })
 server.listen(PORT)
-term.green(`Server Listening on port ${PORT}\n`)
+term.green(`Server listening on port ${PORT}\n`)
 
 const testStartTime = performance.now()
 let totalTestsRun = 0
@@ -203,7 +217,11 @@ allResults.forEach(({ id, results, time }) => {
   totalTestsRun += results.length
 
   if (results.length > 0) {
-    term.bgWhite.black(`${results.length} test ran in ${time} on ${id}. `)
+<<<<<<< HEAD
+    term.bgWhite.black(`${results.length} test ran in ${time} on ${id}.${last}`)
+=======
+    term.bgWhite.black(`${results.length} test ran in ${time} on ${id}.${lastOutput}`)
+>>>>>>> 0f7219dd67b7ef63587e7c6ceb47f4a157e89f65
 
     if (totalFailures) {
       totalTestsFailed += totalFailures;
